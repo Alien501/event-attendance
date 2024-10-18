@@ -19,6 +19,13 @@ With this solution, taking attendance becomes easy. One can simply scan the part
 - Python 3.x
 - Git
 
+## Todo:
+- [ ] Login Screen
+- [ ] Add Event
+- [ ] Add Participant to Event
+- [ ] Modify Participant Data
+- [ ] Delete Participant/Event
+
 ## Installation
 
 ### Client
