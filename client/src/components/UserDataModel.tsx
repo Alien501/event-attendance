@@ -11,7 +11,7 @@ const UserDataModel = ({ isOpen, onOpenChange, userData }: { isOpen: boolean, on
         if(!isOpen) {
             setAttendanceStatus('Wait...')
         }
-    }, []);
+    }, [isOpen]);
 
     useEffect(() => {
         const eventId = parseInt(window.location.pathname.split('/')[2]);
@@ -34,7 +34,7 @@ const UserDataModel = ({ isOpen, onOpenChange, userData }: { isOpen: boolean, on
 
             initiateAttendance(eventId);
         } else {
-            setMarkedAttendance('Error')
+            setMarkedAttendance(true)
             console.warn('User data is missing or incomplete');
         }
     }, [navigate, userData]);
@@ -56,7 +56,7 @@ const UserDataModel = ({ isOpen, onOpenChange, userData }: { isOpen: boolean, on
                             <p className="text-xs font-normal text-center">{userData?.rollNo || "Unknown"}</p>
                             <p className="text-green-500 font-bold text-center">{attendanceStatus}</p>
                         </div>
-                        <Button color="primary" onPress={onClose} isLoading={!markedAttendance}>
+                        <Button color="primary" onPress={onClose} isLoading={attendanceStatus === 'Wait...'? true: false}>
                             Close
                         </Button>
                     </>

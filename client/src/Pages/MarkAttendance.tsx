@@ -22,7 +22,8 @@ const MarkAttendance: React.FC = () => {
     const handleScan = async (scanResult: any) => {
         if (scanResult) {
             if (!scanResult[0].rawValue.includes('https://www.rajalakshmi.org/QRCode/REC.php?RegisterNo=')) {
-                alert('Invalid QR');
+                // alert(scanResult[0].rawValue)
+                // alert('Invalid QR');
                 return;
             }
             setResult(scanResult[0].rawValue);
@@ -36,6 +37,8 @@ const MarkAttendance: React.FC = () => {
                 });
                 onOpen();
             }
+        }else {
+            alert('Scan Again!')
         }
     };
 
@@ -47,7 +50,7 @@ const MarkAttendance: React.FC = () => {
     }, [isOpen]);
 
     const handleError = (error: Error) => {
-        console.error(error); // Optional: log the error for debugging
+        console.error(error);
         setResult(false);
     };
 
@@ -60,7 +63,7 @@ const MarkAttendance: React.FC = () => {
                     handleScan={handleScan}
                     result={isOpen}
                 />
-                <Button color="primary" variant="ghost" onPress={() => navigate('/')}>
+                <Button className="block mx-auto mt-2" color="primary" variant="ghost" onPress={() => navigate('/')}>
                     Go Back
                 </Button>
             </div>

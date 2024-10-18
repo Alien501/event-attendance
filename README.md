@@ -1,50 +1,71 @@
-# React + TypeScript + Vite
+# Events Attendance Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A highly operational attendance tracker solution for college events (Made for REC, customizable as needed). This system utilizes Google Sheets App Script to manage attendance and events.
 
-Currently, two official plugins are available:
+With this solution, taking attendance becomes easy. One can simply scan the participant's ID card to check if they have registered for the event and mark them present in the sheet.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Note: The scraper is specially made for REC Chennai.**
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Easy attendance tracking with ID card scanning
+- Integration with Google Sheets for data management
+- Custom scraper for REC Chennai event data
+- User-friendly client interface
 
-- Configure the top-level `parserOptions` property like this:
+## Prerequisites
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- Node.js and npm
+- Python 3.x
+- Git
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Installation
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### Client
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+1. Clone the repository:
+   ```
+   git clone https://github.com/Alien501/event-attendance.git
+   ```
+
+2. Navigate to the project directory:
+   ```
+   cd event-attendance
+   ```
+
+3. Set up the client:
+   ```
+   cd client
+   npm install
+   ```
+
+4. Create a `.env` file in the `client` directory and populate it with the necessary environment variables.
+
+5. Start the development server:
+   ```
+   npm run dev
+   ```
+
+### Scraper
+
+1. Navigate to the scraper directory:
+   ```
+   cd scrapper
+   ```
+
+2. Install the required Python packages:
+   ```
+   pip install -r requirements.txt
+   ```
+
+## Usage
+
+I'm Lazy Soon...
+
+## Google Scripts
+
+Implementation details for Google Scripts integration are coming soon. This section will include information on how to set up and use the Google Sheets App Script for managing attendance data.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
