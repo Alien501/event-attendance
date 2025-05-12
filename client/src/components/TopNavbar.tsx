@@ -4,7 +4,7 @@ const TopNavbar = () => {
     return(
         <Navbar>
             <NavbarContent>
-                <h1 className="font-bold text-lg text-white">DEVS</h1>
+                <h1 className="font-bold text-lg text-white">Attendance</h1>
             </NavbarContent>
         </Navbar>
     )
